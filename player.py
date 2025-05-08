@@ -5,7 +5,7 @@ import random
 # Flag global untuk kontrol dari GUI
 is_playing = False
 
-def play_clicks(load_path="klik_log.txt", min_delay=10, max_delay=20):
+def play_clicks(load_path="click_log.txt", min_delay=10, max_delay=20):
     global is_playing
     mouse = Controller()
 
