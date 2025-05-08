@@ -3,8 +3,8 @@ import time
 
 clicks = []
 
-def record_clicks(save_path="klik_log.txt"):
-    print("Merekam... (klik kanan untuk berhenti)")
+def record_clicks(save_path="click_log.txt"):
+    print("Recording... (right click to stop recording)")
 
     def on_click(x, y, button, pressed):
         nonlocal last_time
@@ -24,4 +24,4 @@ def record_clicks(save_path="klik_log.txt"):
     with open(save_path, "w") as f:
         for click in clicks:
             f.write(f"{click}\n")
-    print(f"Rekaman selesai. Disimpan di {save_path}")
+    print(f"Recording completed. Saved in {save_path}")
