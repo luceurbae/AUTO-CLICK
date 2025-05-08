@@ -18,7 +18,7 @@ def play_clicks(load_path="klik_log.txt", min_delay=10, max_delay=20):
         while is_playing:
             for delay, x, y, button in clicks:
                 if not is_playing:
-                    print("🛑 Pemutaran dihentikan.")
+                    print("🛑 Stoped.")
                     return
                 time.sleep(delay)
                 mouse.position = (x, y)
@@ -26,15 +26,15 @@ def play_clicks(load_path="klik_log.txt", min_delay=10, max_delay=20):
                 mouse.click(btn)
 
             pause = random.uniform(min_delay, max_delay)
-            print(f"🔁 Satu siklus selesai. Menunggu {pause:.2f} detik...")
+            print(f"🔁 One cycle completed. Waiting {pause:.2f} seconds...")
             for _ in range(int(pause)):
                 if not is_playing:
-                    print("🛑 Pemutaran dihentikan saat jeda.")
+                    print("🛑 Playback stopped during pause.")
                     return
                 time.sleep(1)
 
     except Exception as e:
-        print("❌ Terjadi error:", e)
+        print("❌ Error occurred:", e)
 
 def stop_clicks():
     global is_playing
